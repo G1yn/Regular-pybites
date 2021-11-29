@@ -11,7 +11,4 @@ class Promo:
 
     @property
     def expired(self):
-        if NOW > self.expires:
-            return True
-        else:
-            return False
+        return datetime.now() > self.expires
