@@ -23,10 +23,11 @@ def get_all_matching_models(cars=cars, grep='trail'):
        'grep' string which defaults to 'trail' for this exercise,
        sort the resulting sequence alphabetically"""
  #   return [model for model in cars.values() if model.lower.]
+    grep = grep.lower()
     mylist = []
     for models in cars.values():
         for model in models:
-            if grep.lower() in model.lower():
+            if grep in model.lower():
                 mylist.append(model) 
     mylist.sort()
     return mylist
