@@ -34,6 +34,5 @@ def get_movie_longest_runtime():
     rundict = {}
     for child in root.iter(tag='movie'):
         rundict[child.attrib['title']] = _get_runtime(child.attrib)
-    mylist = [(value,key) for (key,value) in rundict.items()]
-    mylist.sort()
+    mylist = sorted([(value,key) for (key,value) in rundict.items()])
     return mylist[-1][1]
