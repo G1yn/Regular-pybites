@@ -19,7 +19,7 @@ def get_tree():
 def get_movies():
     """Call get_tree and retrieve all movie titles, return a list or generator"""
     root = get_tree()
-    for child in root:
+    for child in root.iter(tag='movie'):
         yield (child.attrib['title'])
     
 def _get_runtime(moviedetails):
@@ -32,10 +32,8 @@ def get_movie_longest_runtime():
        runtime in minutes, for latter consider adding a _get_runtime helper"""
     root = get_tree()
     rundict = {}
-    for child in root:
+    for child in root.iter(tag='movie'):
         rundict[child.attrib['title']] = _get_runtime(child.attrib)
     mylist = [(value,key) for (key,value) in rundict.items()]
     mylist.sort()
     return mylist[-1][1]
-
-print (get_movie_longest_runtime())
