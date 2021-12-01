@@ -36,3 +36,6 @@ def get_movie_longest_runtime():
         rundict[child.attrib['title']] = _get_runtime(child.attrib)
     mylist = sorted([(value,key) for (key,value) in rundict.items()])
     return mylist[-1][1]
+
+# GD Note - I originally tried mylist = Blah.sort() but this fails because .sort() returns NONE
+#           and does the sort in place so you cannot assign the result!
