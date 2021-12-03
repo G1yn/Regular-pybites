@@ -1,9 +1,9 @@
 def fizzbuzz(num):
     if num % 3 == 0 and num % 5 == 0:
-        return 'fizz buzz'
+        return 'Fizz Buzz'
     if num % 3 == 0 :
-        return 'fizz'
+        return 'Fizz'
     if num % 5 == 0:
-        return 'buzz'
+        return 'Buzz'
     else:
         return num
